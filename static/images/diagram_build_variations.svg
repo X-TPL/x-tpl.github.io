@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 430" width="100%" height="100%">
+  <rect width="940" height="430" fill="#ffffff" rx="12" />
+
+  <!-- Title & Subtitle -->
+  <text x="40" y="42" font-family="Inter, sans-serif" font-size="19" font-weight="800" fill="#0f172a">APK Breakdown by Build Configuration &amp; Target Architecture (N = 37,739 APKs)</text>
+  <text x="40" y="66" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#64748b">21,999 Debug Baseline APKs | 14,975 Release (R8) APKs | 765 Native Obfuscated (Flutter) APKs</text>
+
+  <!-- Left Column: Build Configurations by Framework -->
+  <rect x="35" y="88" width="435" height="310" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="55" y="116" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#1e293b">APKs by Compilation Configuration</text>
+
+  <!-- Debug Builds -->
+  <rect x="55" y="132" width="395" height="68" rx="8" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.5"/>
+  <rect x="55" y="132" width="6" height="68" rx="3" fill="#2563eb"/>
+  <text x="73" y="154" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#1e3a8a">Debug Baseline Builds — 21,999 APKs (58.3%)</text>
+  <text x="73" y="173" font-family="Inter, sans-serif" font-size="11.5" fill="#475569">RN: 13,448 (3,968 apps) • MAUI: 7,282 (1,027 apps)</text>
+  <text x="73" y="190" font-family="Inter, sans-serif" font-size="11.5" fill="#475569">Flutter: 861 (241 apps) • Cordova: 408 (102 apps)</text>
+
+  <!-- Release (R8) Builds -->
+  <rect x="55" y="212" width="395" height="68" rx="8" fill="#ffffff" stroke="#bbf7d0" stroke-width="1.5"/>
+  <rect x="55" y="212" width="6" height="68" rx="3" fill="#16a34a"/>
+  <text x="73" y="234" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#14532d">Release (R8 Code Shrinking) — 14,975 APKs (39.7%)</text>
+  <text x="73" y="253" font-family="Inter, sans-serif" font-size="11.5" fill="#475569">MAUI: 8,128 (1,017 apps) • RN: 5,855 (1,776 apps)</text>
+  <text x="73" y="270" font-family="Inter, sans-serif" font-size="11.5" fill="#475569">Flutter: 788 (225 apps) • Cordova: 204 (51 apps)</text>
+
+  <!-- Release (Native Obfuscation) -->
+  <rect x="55" y="292" width="395" height="68" rx="8" fill="#ffffff" stroke="#fed7aa" stroke-width="1.5"/>
+  <rect x="55" y="292" width="6" height="68" rx="3" fill="#ea580c"/>
+  <text x="73" y="314" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#7c2d12">Release (Native Obfuscation) — 765 APKs (2.0%)</text>
+  <text x="73" y="333" font-family="Inter, sans-serif" font-size="11.5" fill="#475569">Flutter (--obfuscate): 765 APKs across 218 apps</text>
+  <text x="73" y="350" font-family="Inter, sans-serif" font-size="11.5" fill="#475569">Strips Dart symbol tables in compiled libapp.so</text>
+
+  <!-- Right Column: Target ABI Architecture Distribution -->
+  <rect x="490" y="88" width="415" height="310" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="510" y="116" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#1e293b">APKs by Target ABI Architecture</text>
+
+  <!-- Universal / Multi-ABI -->
+  <text x="510" y="148" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#334155">Universal / Unsplit APK</text>
+  <text x="885" y="148" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" fill="#4f46e5" text-anchor="end">9,759 (25.9%)</text>
+  <rect x="510" y="155" width="375" height="16" rx="4" fill="#e2e8f0"/>
+  <rect x="510" y="155" width="240" height="16" rx="4" fill="#6366f1"/>
+
+  <!-- x86 (32-bit) -->
+  <text x="510" y="196" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#334155">x86 (32-bit)</text>
+  <text x="885" y="196" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" fill="#0284c7" text-anchor="end">7,459 (19.8%)</text>
+  <rect x="510" y="203" width="375" height="16" rx="4" fill="#e2e8f0"/>
+  <rect x="510" y="203" width="184" height="16" rx="4" fill="#0ea5e9"/>
+
+  <!-- arm64-v8a -->
+  <text x="510" y="244" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#334155">arm64-v8a (64-bit ARM)</text>
+  <text x="885" y="244" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" fill="#0d9488" text-anchor="end">7,213 (19.1%)</text>
+  <rect x="510" y="251" width="375" height="16" rx="4" fill="#e2e8f0"/>
+  <rect x="510" y="251" width="178" height="16" rx="4" fill="#14b8a6"/>
+
+  <!-- x86_64 -->
+  <text x="510" y="292" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#334155">x86_64 (64-bit x86)</text>
+  <text x="885" y="292" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" fill="#7c3aed" text-anchor="end">7,203 (19.1%)</text>
+  <rect x="510" y="299" width="375" height="16" rx="4" fill="#e2e8f0"/>
+  <rect x="510" y="299" width="177" height="16" rx="4" fill="#8b5cf6"/>
+
+  <!-- armeabi-v7a -->
+  <text x="510" y="340" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#334155">armeabi-v7a (32-bit ARM)</text>
+  <text x="885" y="340" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" fill="#d97706" text-anchor="end">6,105 (16.2%)</text>
+  <rect x="510" y="347" width="375" height="16" rx="4" fill="#e2e8f0"/>
+  <rect x="510" y="347" width="150" height="16" rx="4" fill="#f59e0b"/>
+</svg>

@@ -32,7 +32,7 @@
 
   <!-- Academic/Research Specific -->
   <meta name="citation_title" content="X-TPL: A Ground-Truth Dataset of Cross-Platform Android Apps and their Third-Party Libraries">
-  <meta name="citation_author" content="Frederik, Jordi Tim">
+  <meta name="citation_author" content="Jordi, Tim Frederik">
   <meta name="citation_author" content="Sutter, Thomas">
   <meta name="citation_author" content="Kehrer, Timo">
   
@@ -72,7 +72,7 @@
     "author": [
       {
         "@type": "Person",
-        "name": "Jordi Tim Frederik",
+        "name": "Tim Frederik Jordi",
         "affiliation": {
           "@type": "Organization",
           "name": "University of Bern"
@@ -160,7 +160,7 @@
               <div class="is-size-5 publication-authors">
                 <span class="author-block">
                   <a href="https://orcid.org/0009-0007-6167-4788" target="_blank" rel="noopener noreferrer">
-                    Jordi Tim Frederik
+                     Tim Frederik Jordi
                     <i class="ai ai-orcid orcid-icon"></i>
                   </a>
                 </span> &nbsp;&bull;&nbsp;
@@ -246,31 +246,31 @@
         <div class="stats-grid">
           
           <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-file-archive"></i></div>
+            <div class="stat-value">37,739 APKs</div>
+            <div class="stat-label">Compiled Binaries (APKs)</div>
+            <div class="stat-desc">21,999 Debug, 14,975 Release (R8), and 765 Native Obfuscated (Flutter) APKs across 5,345 apps.</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-cubes"></i></div>
+            <div class="stat-value">78,593 TPLs</div>
+            <div class="stat-label">Verified TPL Ground Truth</div>
+            <div class="stat-desc">78,593 unique TPL-version pairs (15,236 unique library names) mapped from resolved lock files.</div>
+          </div>
+
+          <div class="stat-card">
             <div class="stat-icon"><i class="fas fa-layer-group"></i></div>
-            <div class="stat-value">Four Hybrid Frameworks</div>
-            <div class="stat-label">Multi-Ecosystem</div>
-            <div class="stat-desc">Flutter, React Native, Apache Cordova, and .NET MAUI applications.</div>
-          </div>
-
-          <div class="stat-card">
-            <div class="stat-icon"><i class="fas fa-check-double"></i></div>
-            <div class="stat-value">Verified</div>
-            <div class="stat-label">Compile-Time Ground Truth</div>
-            <div class="stat-desc">Exact package manager lock files guarantee accurate dependencies.</div>
-          </div>
-
-          <div class="stat-card">
-            <div class="stat-icon"><i class="fas fa-sliders-h"></i></div>
-            <div class="stat-value">Paired Builds</div>
-            <div class="stat-label">Debug &amp; Obfuscated</div>
-            <div class="stat-desc">Debug vs. Release builds (with R8 code shrinking and obfuscation).</div>
+            <div class="stat-value">57,993 Repos</div>
+            <div class="stat-label">Data Collection &amp; Filtering</div>
+            <div class="stat-desc">54,953 repositories tagged buildable (94.8%) across 4 hybrid frameworks via PyGithub crawler.</div>
           </div>
 
           <div class="stat-card">
             <div class="stat-icon"><i class="fas fa-microchip"></i></div>
-            <div class="stat-value">Multi-Arch</div>
-            <div class="stat-label">Binary Diversity</div>
-            <div class="stat-desc">Targeted ARM and x86 APK builds mimicking production store distributions.</div>
+            <div class="stat-value">Multi-ABI</div>
+            <div class="stat-label">Target ABI Distribution</div>
+            <div class="stat-desc">9,759 Universal/Unsplit, 7,459 x86, 7,213 arm64-v8a, 7,203 x86_64, and 6,105 armeabi-v7a APKs.</div>
           </div>
 
         </div>
@@ -285,13 +285,10 @@
             <h2 class="title is-3">Abstract</h2>
             <div class="content has-text-justified">
               <p>
-                Cross-Platform mobile application frameworks—such as <strong>Flutter, React Native, Apache Cordova, and .NET MAUI</strong>—have surged in popularity, allowing developers to target multiple operating systems from a single codebase. However, this flexibility introduces profound challenges for software maintenance, security auditing, and license compliance. 
+                Cross-Platform mobile application frameworks—such as <strong>Flutter, MAUI, React Native, and Cordova</strong>—have surged in popularity, allowing developers to target multiple platforms from a single codebase. However, this architectural flexibility introduces significant challenges for software maintenance, security auditing, and reverse engineering. Detecting Third-Party Libraries (TPLs) is critical for identifying vulnerabilities and ensuring license compliance, yet state-of-the-art native Android TPL detection tools frequently fail when confronted with the unique compilation targets, JavaScript bridges, and custom runtimes of hybrid ecosystems. Research in this domain remains severely bottlenecked by the lack of high-quality, framework-diverse benchmarks.
               </p>
               <p>
-                State-of-the-art native Android Third-Party Library (TPL) detection tools (e.g., LibScout, LibRadar, LibScan) rely on standard Dalvik/ART bytecode (<code>classes.dex</code>) and fail when confronted with hybrid apps, where dependencies reside inside JavaScript bundles (<code>index.android.bundle</code>), compiled Dart machine code (<code>libapp.so</code>), WebViews, or .NET assemblies. Research has been bottlenecked by the lack of high-quality, framework-diverse benchmarks.
-              </p>
-              <p>
-                <strong>X-TPL</strong> (Cross-TPL) provides the first verified, large-scale ground-truth benchmark mapping production hybrid Android APKs directly to their compiled third-party dependencies, supported by a fully automated and containerized curation pipeline.
+                We present <strong>X-TPL</strong>, a large-scale, verified ground-truth dataset specifically curated to advance the state-of-the-art in black-box TPL detection for hybrid Android apps. The dataset contains <strong>37,739 Android APK files</strong> (across 5,345 compiled applications) spanning four major hybrid frameworks, mapping them to a verified ground truth of <strong>78,593 unique TPL-version pairs</strong> (15,236 unique third-party library names). By capturing the complex interplay between native wrappers and framework-specific dependencies without relying on source code availability, <strong>X-TPL</strong> provides a rigorous testing ground for evaluating TPL fingerprinting and binary analysis tools in realistic, black-box settings. We outline the automated curation pipeline used to construct the dataset, present an empirical characterization of the hybrid TPL landscape, and demonstrate how our benchmark exposes critical blind spots in existing native detection techniques.
               </p>
             </div>
           </div>
@@ -417,7 +414,7 @@
       </div>
     </section>
 
-    <!-- Video Presentation Section (YouTube Reference Placeholder) -->
+    <!-- Video Presentation Section -->
     <section class="section" id="video-showcase">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
@@ -427,46 +424,29 @@
               Demonstration video accompanying our Tool Demonstration and Data Showcase submission.
             </p>
 
-            <!-- Video Box Container -->
-            <div class="video-showcase-box">
-              <div class="video-placeholder-inner">
-                <div class="video-placeholder-content">
-                  
-                  <span class="video-duration-pill">
-                    <i class="fas fa-clock"></i> 3&ndash;5 Minute Walkthrough &bull; Data Showcase
-                  </span>
+            <!-- Embedded Responsive YouTube Player -->
+            <div class="publication-video">
+              <iframe src="https://www.youtube.com/embed/8rLUumhgLg8"
+                      title="X-TPL: Dataset Walkthrough &amp; Curation Pipeline Demo"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowfullscreen></iframe>
+            </div>
 
-                  <!-- YouTube Play Button linking to the placeholder -->
-                  <a href="https://youtu.be/PLACEHOLDER" target="_blank" class="video-play-button" title="Watch on YouTube">
-                    <i class="fas fa-play" style="margin-left: 5px;"></i>
-                  </a>
+            <!-- Direct YouTube Link Button -->
+            <div style="margin-top: 1.5rem; margin-bottom: 1.25rem;">
+              <a href="https://youtu.be/8rLUumhgLg8" target="_blank" class="button is-danger is-normal is-rounded" style="font-weight: 700;">
+                <span class="icon"><i class="fab fa-youtube"></i></span>
+                <span>Watch on YouTube</span>
+              </a>
+            </div>
 
-                  <h3 class="video-title-placeholder">
-                    X-TPL: Dataset Walkthrough &amp; Curation Pipeline Demo
-                  </h3>
-
-                  <p class="video-desc-placeholder">
-                    Video presentation walking through the X-TPL benchmark structure, Docker-based curation pipeline, lock-file ground-truth extraction, and black-box TPL detection evaluations.
-                  </p>
-
-                  <!-- Direct YouTube Link Button -->
-                  <div style="margin-top: 0.5rem; margin-bottom: 1.25rem;">
-                    <a href="https://youtu.be/PLACEHOLDER" target="_blank" class="button is-danger is-small is-rounded" style="font-weight: 700;">
-                      <span class="icon"><i class="fab fa-youtube"></i></span>
-                      <span>Watch Video on YouTube (Placeholder: youtu.be/PLACEHOLDER)</span>
-                    </a>
-                  </div>
-
-                  <!-- Covered Topics Tags -->
-                  <div class="video-topics-list">
-                    <span class="video-topic-tag"><i class="fas fa-crosshairs"></i> Hybrid TPL Blind Spots</span>
-                    <span class="video-topic-tag"><i class="fas fa-docker"></i> Automated Docker Builds</span>
-                    <span class="video-topic-tag"><i class="fas fa-file-contract"></i> Lockfile Ground Truth</span>
-                    <span class="video-topic-tag"><i class="fas fa-shield-alt"></i> Black-Box Detection Benchmarks</span>
-                  </div>
-
-                </div>
-              </div>
+            <!-- Covered Topics Tags -->
+            <div class="video-topics-list" style="justify-content: center;">
+              <span class="video-topic-tag"><i class="fas fa-crosshairs"></i> Hybrid TPL Blind Spots</span>
+              <span class="video-topic-tag"><i class="fas fa-docker"></i> Automated Docker Builds</span>
+              <span class="video-topic-tag"><i class="fas fa-file-contract"></i> Lockfile Ground Truth</span>
+              <span class="video-topic-tag"><i class="fas fa-shield-alt"></i> Black-Box Detection Benchmarks</span>
             </div>
 
           </div>
@@ -474,7 +454,7 @@
       </div>
     </section>
 
-    <!-- Dataset Overview & Variations Section (Diagram Placeholders) -->
+    <!-- Dataset Overview & Variations Section (Diagrams & Statistics) -->
     <section class="section hero is-light" id="dataset-variations">
       <div class="container is-max-desktop">
         
@@ -487,14 +467,16 @@
 
         <!-- Table I: Overview from the paper -->
         <div class="columns is-centered" style="margin-bottom: 2rem;">
-          <div class="column is-10">
+          <div class="column is-11">
             <div style="overflow-x: auto;">
               <table class="table is-custom is-hoverable is-fullwidth">
                 <thead>
                   <tr>
                     <th>Framework</th>
+                    <th class="has-text-centered">Crawled Repos <small>(Tagged Buildable)</small></th>
                     <th class="has-text-centered">Compiled Apps</th>
-                    <th class="has-text-centered">Unique TPLs</th>
+                    <th class="has-text-centered">Unique TPLs <small>(TPL-Version Pairs)</small></th>
+                    <th class="has-text-centered">Compiled Binaries (APKs)</th>
                     <th>Build Configurations</th>
                   </tr>
                 </thead>
@@ -502,31 +484,19 @@
                   <tr>
                     <td>
                       <span class="framework-badge">
-                        <i class="fab fa-flutter" style="color: #02569B;"></i> Flutter
-                      </span>
-                    </td>
-                    <td class="has-text-centered"><code>XXXX</code></td>
-                    <td class="has-text-centered"><code>XXXX</code></td>
-                    <td>Debug, Rel. (R8 Code Shrinking), Rel. (Native Obfuscation)</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="framework-badge">
                         <i class="fab fa-react" style="color: #61DAFB;"></i> React Native
                       </span>
                     </td>
-                    <td class="has-text-centered"><code>XXXX</code></td>
-                    <td class="has-text-centered"><code>XXXX</code></td>
-                    <td>Debug, Rel. (R8 Code Shrinking)</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="framework-badge">
-                        <i class="fas fa-mobile-alt" style="color: #E68523;"></i> Apache Cordova
-                      </span>
+                    <td class="has-text-centered"><strong>51,407</strong> <small class="has-text-grey">(51,010)</small></td>
+                    <td class="has-text-centered"><strong>3,968</strong> <small class="has-text-grey">(4,035 dirs)</small></td>
+                    <td class="has-text-centered">
+                      <strong>12,508</strong> <small class="has-text-grey">(68,573)</small>
+                      <br><small class="has-text-grey">11,193 prod &bull; 9,376 direct</small>
                     </td>
-                    <td class="has-text-centered"><code>XXXX</code></td>
-                    <td class="has-text-centered"><code>XXXX</code></td>
+                    <td class="has-text-centered">
+                      <span class="tag is-info is-light" style="font-weight: 700;">19,303 APKs</span>
+                      <br><small class="has-text-grey">13,448 Debug &bull; 5,855 R8</small>
+                    </td>
                     <td>Debug, Rel. (R8 Code Shrinking)</td>
                   </tr>
                   <tr>
@@ -535,125 +505,394 @@
                         <i class="fas fa-cubes" style="color: #512BD4;"></i> .NET MAUI
                       </span>
                     </td>
-                    <td class="has-text-centered"><code>XXXX</code></td>
-                    <td class="has-text-centered"><code>XXXX</code></td>
+                    <td class="has-text-centered"><strong>2,159</strong> <small class="has-text-grey">(1,679)</small></td>
+                    <td class="has-text-centered"><strong>1,027</strong></td>
+                    <td class="has-text-centered">
+                      <strong>1,033</strong> <small class="has-text-grey">(3,809)</small>
+                      <br><small class="has-text-grey">1,033 prod &bull; 340 direct</small>
+                    </td>
+                    <td class="has-text-centered">
+                      <span class="tag is-info is-light" style="font-weight: 700;">15,410 APKs</span>
+                      <br><small class="has-text-grey">7,282 Debug &bull; 8,128 R8</small>
+                    </td>
+                    <td>Debug, Rel. (R8 Code Shrinking)</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="framework-badge">
+                        <i class="fab fa-flutter" style="color: #02569B;"></i> Flutter
+                      </span>
+                    </td>
+                    <td class="has-text-centered"><strong>1,768</strong> <small class="has-text-grey">(1,677)</small></td>
+                    <td class="has-text-centered"><strong>248</strong></td>
+                    <td class="has-text-centered">
+                      <strong>871</strong> <small class="has-text-grey">(3,222)</small>
+                      <br><small class="has-text-grey">846 prod &bull; 435 direct</small>
+                    </td>
+                    <td class="has-text-centered">
+                      <span class="tag is-info is-light" style="font-weight: 700;">2,414 APKs</span>
+                      <br><small class="has-text-grey">861 Debug &bull; 788 R8 &bull; 765 Obf.</small>
+                    </td>
+                    <td>Debug, Rel. (R8), Rel. (Native Obfuscation)</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="framework-badge">
+                        <i class="fas fa-mobile-alt" style="color: #E68523;"></i> Apache Cordova
+                      </span>
+                    </td>
+                    <td class="has-text-centered"><strong>2,659</strong> <small class="has-text-grey">(587)</small></td>
+                    <td class="has-text-centered"><strong>102</strong></td>
+                    <td class="has-text-centered">
+                      <strong>3,825</strong> <small class="has-text-grey">(8,973)</small>
+                      <br><small class="has-text-grey">2,927 prod &bull; 95 plugins</small>
+                    </td>
+                    <td class="has-text-centered">
+                      <span class="tag is-info is-light" style="font-weight: 700;">612 APKs</span>
+                      <br><small class="has-text-grey">408 Debug &bull; 204 R8</small>
+                    </td>
                     <td>Debug, Rel. (R8 Code Shrinking)</td>
                   </tr>
                 </tbody>
                 <tfoot>
                   <tr style="background: #f1f5f9; font-weight: 700;">
                     <td>Total Dataset</td>
-                    <td class="has-text-centered"><code>XXXX</code></td>
-                    <td class="has-text-centered"><code>XXXX</code></td>
-                    <td>Multi-Arch (ARM &amp; x86) Across All Frameworks</td>
+                    <td class="has-text-centered"><strong>57,993</strong> <small>(54,953)</small></td>
+                    <td class="has-text-centered"><strong>5,345</strong> <small>(5,412 dirs)</small></td>
+                    <td class="has-text-centered">
+                      <strong>15,236</strong> <small>(78,593)</small>
+                      <br><small style="font-weight: 500; color: #475569;">18,237 sum (84,577 ver.)</small>
+                    </td>
+                    <td class="has-text-centered">
+                      <span class="tag is-primary" style="font-weight: 700; background: var(--primary-color);">37,739 APKs</span>
+                      <br><small style="font-weight: 500; color: #475569;">21,999 Debug &bull; 14,975 R8 &bull; 765 Obf.</small>
+                    </td>
+                    <td>Multi-ABI (ARM64, ARMv7, x86, x86_64, Universal)</td>
                   </tr>
                 </tfoot>
               </table>
             </div>
             <p class="has-text-centered" style="font-size: 0.85rem; color: var(--text-light); margin-top: 0.5rem;">
-              <em>Table 1: Overview of the X-TPL dataset composition by cross-platform framework.</em>
+              <em>Overview of the X-TPL dataset from Data Collection and Filtering (<code>repos.json</code>) to Compiled Binaries (APKs) and Ground-Truth Artifacts.</em>
             </p>
           </div>
         </div>
 
-        <!-- DIAGRAM PLACEHOLDER 1: Number of Apps and TPL Distribution -->
-        <div class="diagram-placeholder-card">
-          <div class="diagram-placeholder-header">
-            <span class="diagram-tag"><i class="fas fa-chart-pie"></i> Diagram Placeholder 1</span>
-            <span class="diagram-badge-pending">
-              <i class="fas fa-hourglass-half"></i> Placeholder: App &amp; TPL Distribution
-            </span>
-          </div>
-
-          <!-- Mock Visual Wireframe -->
-          <div class="diagram-mock-preview">
-            <div class="diagram-mock-icon">
-              <i class="fas fa-chart-bar"></i>
+        <!-- Paper Table I: Target ABI and Architecture Distribution across Cross-Platform Frameworks -->
+        <div class="columns is-centered" style="margin-bottom: 2rem;">
+          <div class="column is-11">
+            <div style="overflow-x: auto;">
+              <table class="table is-custom is-hoverable is-fullwidth">
+                <thead>
+                  <tr>
+                    <th>Target ABI</th>
+                    <th class="has-text-right">React Native</th>
+                    <th class="has-text-right">.NET MAUI</th>
+                    <th class="has-text-right">Flutter</th>
+                    <th class="has-text-right">Cordova</th>
+                    <th class="has-text-right">Total APKs</th>
+                    <th class="has-text-right">Share</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Universal / Unsplit</strong></td>
+                    <td class="has-text-right">1,264</td>
+                    <td class="has-text-right">8,150</td>
+                    <td class="has-text-right">295 <small class="has-text-grey">(34 base)</small></td>
+                    <td class="has-text-right">50</td>
+                    <td class="has-text-right"><strong>9,759</strong></td>
+                    <td class="has-text-right">25.9%</td>
+                  </tr>
+                  <tr>
+                    <td><strong>x86 (32-bit)</strong></td>
+                    <td class="has-text-right">4,503</td>
+                    <td class="has-text-right">2,786</td>
+                    <td class="has-text-right">17</td>
+                    <td class="has-text-right">153</td>
+                    <td class="has-text-right"><strong>7,459</strong></td>
+                    <td class="has-text-right">19.8%</td>
+                  </tr>
+                  <tr>
+                    <td><strong>arm64-v8a (64-bit)</strong></td>
+                    <td class="has-text-right">4,516</td>
+                    <td class="has-text-right">1,860</td>
+                    <td class="has-text-right">684</td>
+                    <td class="has-text-right">153</td>
+                    <td class="has-text-right"><strong>7,213</strong></td>
+                    <td class="has-text-right">19.1%</td>
+                  </tr>
+                  <tr>
+                    <td><strong>x86_64 (64-bit)</strong></td>
+                    <td class="has-text-right">4,506</td>
+                    <td class="has-text-right">1,860</td>
+                    <td class="has-text-right">684</td>
+                    <td class="has-text-right">153</td>
+                    <td class="has-text-right"><strong>7,203</strong></td>
+                    <td class="has-text-right">19.1%</td>
+                  </tr>
+                  <tr>
+                    <td><strong>armeabi-v7a (32-bit)</strong></td>
+                    <td class="has-text-right">4,514</td>
+                    <td class="has-text-right">754</td>
+                    <td class="has-text-right">684</td>
+                    <td class="has-text-right">153</td>
+                    <td class="has-text-right"><strong>6,105</strong></td>
+                    <td class="has-text-right">16.2%</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr style="background: #f1f5f9; font-weight: 700;">
+                    <td>Total</td>
+                    <td class="has-text-right"><strong>19,303</strong></td>
+                    <td class="has-text-right"><strong>15,410</strong></td>
+                    <td class="has-text-right"><strong>2,414</strong></td>
+                    <td class="has-text-right"><strong>612</strong></td>
+                    <td class="has-text-right"><span class="tag is-primary" style="font-weight: 700; background: var(--primary-color);">37,739</span></td>
+                    <td class="has-text-right"><strong>100.0%</strong></td>
+                  </tr>
+                </tfoot>
+              </table>
             </div>
-            <!-- Visual representation / bars -->
-            <div style="display: flex; gap: 1.5rem; align-items: flex-end; height: 90px; margin-bottom: 1rem;">
-              <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem;">
-                <div style="width: 45px; height: 75px; background: #02569B; border-radius: 4px; opacity: 0.85;"></div>
-                <span style="font-size: 0.75rem; font-weight: 600; color: #475569;">Flutter</span>
-              </div>
-              <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem;">
-                <div style="width: 45px; height: 60px; background: #61DAFB; border-radius: 4px; opacity: 0.85;"></div>
-                <span style="font-size: 0.75rem; font-weight: 600; color: #475569;">React Native</span>
-              </div>
-              <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem;">
-                <div style="width: 45px; height: 45px; background: #E68523; border-radius: 4px; opacity: 0.85;"></div>
-                <span style="font-size: 0.75rem; font-weight: 600; color: #475569;">Cordova</span>
-              </div>
-              <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem;">
-                <div style="width: 45px; height: 50px; background: #512BD4; border-radius: 4px; opacity: 0.85;"></div>
-                <span style="font-size: 0.75rem; font-weight: 600; color: #475569;">.NET MAUI</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- HTML comment for user/developer replacement -->
-          <!-- TODO: Replace the preview above with: <img src="static/images/diagram_apps_distribution.svg" alt="Number of Apps and TPL Distribution"> -->
-          
-          <div class="diagram-caption">
-            Figure: Number of Compiled Apps and Unique TPLs across Cross-Platform Frameworks
-          </div>
-          <div class="diagram-subcaption">
-            Visual plot illustrating the relative proportion of compiled applications, unique third-party libraries, and multi-tier dependencies (native Android vs. framework packages) across Flutter, React Native, Cordova, and MAUI.
+            <p class="has-text-centered" style="font-size: 0.85rem; color: var(--text-light); margin-top: 0.5rem;">
+              <em>Table I (Paper): Target ABI and Architecture Distribution across Cross-Platform Frameworks.</em>
+            </p>
           </div>
         </div>
 
-        <!-- DIAGRAM PLACEHOLDER 2: Build Variations & Target Architectures -->
+        <!-- Table 2 & Table 3: Detailed Ground-Truth TPL Breakdown -->
+        <div class="columns is-centered" style="margin-bottom: 2.25rem;">
+          <div class="column is-11">
+            <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 1.5rem; box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);">
+              <h3 class="title is-5" style="margin-bottom: 0.4rem; color: var(--text-primary);">
+                <i class="fas fa-cubes" style="color: var(--primary-color); margin-right: 0.4rem;"></i>
+                Ground-Truth Artifacts: Third-Party Library (TPL) Breakdown
+              </h3>
+              <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+                Extracted from all <strong>5,345 compiled applications</strong> across dependency scopes: <strong>All Resolved</strong> (direct + transitive dependencies preserved in compile-time lock files), <strong>Production Only</strong> (excluding <code>devDependencies</code> / <code>dev</code> packages), and <strong>Direct Only</strong> (top-level declared dependencies).
+              </p>
+
+              <!-- Table 2: Unique TPLs by Package Name -->
+              <h4 style="font-size: 0.98rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.6rem;">
+                1. Unique TPLs by Package Name (<code>name</code>)
+              </h4>
+              <div style="overflow-x: auto; margin-bottom: 1.5rem;">
+                <table class="table is-custom is-hoverable is-fullwidth" style="margin-bottom: 0.4rem;">
+                  <thead>
+                    <tr>
+                      <th>Framework</th>
+                      <th class="has-text-centered">Compiled Apps</th>
+                      <th>Ground-Truth Lock File Source</th>
+                      <th class="has-text-centered">All Resolved TPLs<br><small>(Direct + Transitive)</small></th>
+                      <th class="has-text-centered">Production TPLs<br><small>(Non-Dev Only)</small></th>
+                      <th class="has-text-centered">Direct TPLs Only<br><small>(Top-Level)</small></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <span class="framework-badge">
+                          <i class="fab fa-react" style="color: #61DAFB;"></i> React Native
+                        </span>
+                      </td>
+                      <td class="has-text-centered">3,968</td>
+                      <td><code>package-lock.json</code> / <code>yarn.lock</code> / <code>pnpm-lock.yaml</code></td>
+                      <td class="has-text-centered"><strong>12,508</strong></td>
+                      <td class="has-text-centered"><strong>11,193</strong></td>
+                      <td class="has-text-centered"><strong>9,376</strong></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="framework-badge">
+                          <i class="fas fa-cubes" style="color: #512BD4;"></i> .NET MAUI
+                        </span>
+                      </td>
+                      <td class="has-text-centered">1,027</td>
+                      <td><code>packages.lock.json</code> (NuGet)</td>
+                      <td class="has-text-centered"><strong>1,033</strong></td>
+                      <td class="has-text-centered"><strong>1,033</strong></td>
+                      <td class="has-text-centered"><strong>340</strong></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="framework-badge">
+                          <i class="fab fa-flutter" style="color: #02569B;"></i> Flutter
+                        </span>
+                      </td>
+                      <td class="has-text-centered">248</td>
+                      <td><code>pubspec.lock</code> / <code>package_config.json</code> (Pub)</td>
+                      <td class="has-text-centered"><strong>871</strong> <small class="has-text-grey">(865 non-SDK)</small></td>
+                      <td class="has-text-centered"><strong>846</strong></td>
+                      <td class="has-text-centered"><strong>435</strong></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="framework-badge">
+                          <i class="fas fa-mobile-alt" style="color: #E68523;"></i> Apache Cordova
+                        </span>
+                      </td>
+                      <td class="has-text-centered">102</td>
+                      <td><code>package-lock.json</code> + <code>package.json</code></td>
+                      <td class="has-text-centered"><strong>3,825</strong> <small class="has-text-grey">(+ 95 plugins)</small></td>
+                      <td class="has-text-centered"><strong>2,927</strong></td>
+                      <td class="has-text-centered"><strong>2,806</strong></td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr style="background: #f8fafc; font-weight: 600;">
+                      <td>Sum Across 4 Frameworks</td>
+                      <td class="has-text-centered">5,345</td>
+                      <td><em>Per-framework sum</em></td>
+                      <td class="has-text-centered"><strong>18,237</strong></td>
+                      <td class="has-text-centered"><strong>15,999</strong></td>
+                      <td class="has-text-centered"><strong>12,957</strong></td>
+                    </tr>
+                    <tr style="background: #f1f5f9; font-weight: 700;">
+                      <td>Deduplicated Total (Ecosystem Union)</td>
+                      <td class="has-text-centered"><strong>5,345</strong></td>
+                      <td><em>Deduplicating 3,001 shared npm packages (RN &amp; Cordova)</em></td>
+                      <td class="has-text-centered"><span class="tag is-primary" style="font-weight: 700; background: var(--primary-color);">15,236</span></td>
+                      <td class="has-text-centered"><strong>13,645</strong></td>
+                      <td class="has-text-centered"><strong>10,883</strong></td>
+                    </tr>
+                  </tfoot>
+                </table>
+                <p class="has-text-centered" style="font-size: 0.82rem; color: var(--text-light); margin-top: 0.35rem;">
+                  <em>Unique third-party library names (<code>name</code>) per framework and deduplicated across package ecosystems.</em>
+                </p>
+              </div>
+
+              <!-- Table 3: Unique TPL-Version Pairs -->
+              <h4 style="font-size: 0.98rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.6rem;">
+                2. Unique TPL-Version Pairs (<code>name@version</code>)
+              </h4>
+              <div style="overflow-x: auto; margin-bottom: 1rem;">
+                <table class="table is-custom is-hoverable is-fullwidth" style="margin-bottom: 0.4rem;">
+                  <thead>
+                    <tr>
+                      <th>Framework</th>
+                      <th class="has-text-centered">Compiled Apps</th>
+                      <th class="has-text-centered">All Resolved TPL-Version Pairs<br><small>(Direct + Transitive)</small></th>
+                      <th class="has-text-centered">Production TPL-Version Pairs<br><small>(Non-Dev Only)</small></th>
+                      <th class="has-text-centered">Direct TPL-Version Pairs<br><small>(Top-Level)</small></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <span class="framework-badge">
+                          <i class="fab fa-react" style="color: #61DAFB;"></i> React Native
+                        </span>
+                      </td>
+                      <td class="has-text-centered">3,968</td>
+                      <td class="has-text-centered"><strong>68,573</strong></td>
+                      <td class="has-text-centered"><strong>59,684</strong></td>
+                      <td class="has-text-centered"><strong>43,453</strong></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="framework-badge">
+                          <i class="fas fa-cubes" style="color: #512BD4;"></i> .NET MAUI
+                        </span>
+                      </td>
+                      <td class="has-text-centered">1,027</td>
+                      <td class="has-text-centered"><strong>3,809</strong></td>
+                      <td class="has-text-centered"><strong>3,809</strong></td>
+                      <td class="has-text-centered"><strong>753</strong></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="framework-badge">
+                          <i class="fab fa-flutter" style="color: #02569B;"></i> Flutter
+                        </span>
+                      </td>
+                      <td class="has-text-centered">248</td>
+                      <td class="has-text-centered"><strong>3,222</strong> <small class="has-text-grey">(3,215 non-SDK)</small></td>
+                      <td class="has-text-centered"><strong>3,127</strong></td>
+                      <td class="has-text-centered"><strong>1,020</strong></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="framework-badge">
+                          <i class="fas fa-mobile-alt" style="color: #E68523;"></i> Apache Cordova
+                        </span>
+                      </td>
+                      <td class="has-text-centered">102</td>
+                      <td class="has-text-centered"><strong>8,973</strong></td>
+                      <td class="has-text-centered"><strong>5,955</strong></td>
+                      <td class="has-text-centered"><strong>4,774</strong></td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr style="background: #f8fafc; font-weight: 600;">
+                      <td>Sum Across 4 Frameworks</td>
+                      <td class="has-text-centered">5,345</td>
+                      <td class="has-text-centered"><strong>84,577</strong></td>
+                      <td class="has-text-centered"><strong>72,575</strong></td>
+                      <td class="has-text-centered"><strong>50,000</strong></td>
+                    </tr>
+                    <tr style="background: #f1f5f9; font-weight: 700;">
+                      <td>Deduplicated Total (Ecosystem Union)</td>
+                      <td class="has-text-centered"><strong>5,345</strong></td>
+                      <td class="has-text-centered"><span class="tag is-primary" style="font-weight: 700; background: var(--primary-color);">78,593</span></td>
+                      <td class="has-text-centered"><strong>68,547</strong></td>
+                      <td class="has-text-centered"><strong>47,201</strong></td>
+                    </tr>
+                  </tfoot>
+                </table>
+                <p class="has-text-centered" style="font-size: 0.82rem; color: var(--text-light); margin-top: 0.35rem;">
+                  <em>Unique TPL-version pairs (<code>name@version</code>) per framework and deduplicated across package ecosystems (5,984 shared npm TPL-version pairs between React Native and Cordova).</em>
+                </p>
+              </div>
+
+              <!-- Callout note on Deduplication & Native Binaries -->
+              <div style="background: #f8fafc; border-left: 4px solid var(--primary-color); padding: 0.85rem 1rem; border-radius: 0 6px 6px 0; font-size: 0.88rem; color: var(--text-secondary);">
+                <strong>Ecosystem Deduplication &amp; Directly Included Native Binaries (<code>libs/</code>):</strong>
+                React Native and Apache Cordova both use the <strong>npm</strong> ecosystem and share <strong>3,001</strong> unique package names (<code>13,332</code> unique npm packages combined) and <strong>5,984</strong> identical TPL-version pairs (<code>71,562</code> unique npm TPL-version pairs combined). In addition to framework-specific lock files, X-TPL preserves directly included <code>.jar</code>/<code>.aar</code>/<code>.so</code> binaries in project <code>libs/</code> folders: <strong>27</strong> unique <code>.jar</code>/<code>.aar</code> files in Cordova (33 instances), <strong>8</strong> unique <code>.aar</code>/<code>.so</code> files in React Native (65 instances), and <strong>1</strong> unique <code>.so</code> binary in Flutter.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIAGRAM 1: Number of Apps and APK Distribution -->
         <div class="diagram-placeholder-card">
           <div class="diagram-placeholder-header">
-            <span class="diagram-tag"><i class="fas fa-layer-group"></i> Diagram Placeholder 2</span>
-            <span class="diagram-badge-pending">
-              <i class="fas fa-hourglass-half"></i> Placeholder: Variations &amp; Architectures
+            <span class="diagram-tag"><i class="fas fa-chart-pie"></i> Framework &amp; APK Distribution</span>
+            <span class="diagram-badge-ready">
+              <i class="fas fa-check-circle"></i> Dataset Statistics (37,739 APKs &bull; 5,345 Apps)
             </span>
           </div>
 
-          <!-- Mock Visual Wireframe -->
-          <div class="diagram-mock-preview">
-            <div class="diagram-mock-icon">
-              <i class="fas fa-project-diagram"></i>
-            </div>
-            <!-- Stacked bar / config variation layout -->
-            <div style="display: flex; flex-direction: column; gap: 0.6rem; width: 100%; max-width: 480px;">
-              <div style="display: flex; align-items: center; gap: 0.75rem;">
-                <span style="font-size: 0.8rem; font-weight: 600; width: 110px; text-align: right; color: #475569;">Debug Builds:</span>
-                <div style="flex-grow: 1; height: 18px; background: #93c5fd; border-radius: 4px; position: relative;">
-                  <span style="position: absolute; right: 8px; font-size: 0.7rem; font-weight: 700; color: #1e3a8a;">Baseline Footprint</span>
-                </div>
-              </div>
-              <div style="display: flex; align-items: center; gap: 0.75rem;">
-                <span style="font-size: 0.8rem; font-weight: 600; width: 110px; text-align: right; color: #475569;">Release (R8):</span>
-                <div style="flex-grow: 1; height: 18px; background: #86efac; border-radius: 4px; position: relative;">
-                  <span style="position: absolute; right: 8px; font-size: 0.7rem; font-weight: 700; color: #14532d;">Tree-Shaken / Minified</span>
-                </div>
-              </div>
-              <div style="display: flex; align-items: center; gap: 0.75rem;">
-                <span style="font-size: 0.8rem; font-weight: 600; width: 110px; text-align: right; color: #475569;">Release (Obf.):</span>
-                <div style="flex-grow: 1; height: 18px; background: #fdba74; border-radius: 4px; position: relative;">
-                  <span style="position: absolute; right: 8px; font-size: 0.7rem; font-weight: 700; color: #7c2d12;">Native Obfuscated</span>
-                </div>
-              </div>
-              <div style="display: flex; align-items: center; gap: 0.75rem;">
-                <span style="font-size: 0.8rem; font-weight: 600; width: 110px; text-align: right; color: #475569;">Architectures:</span>
-                <div style="flex-grow: 1; display: flex; gap: 4px;">
-                  <div style="flex: 1; height: 18px; background: #c4b5fd; border-radius: 4px; text-align: center; font-size: 0.7rem; font-weight: 700; color: #4c1d95;">ARM64 / ARMv7</div>
-                  <div style="flex: 1; height: 18px; background: #fbcfe8; border-radius: 4px; text-align: center; font-size: 0.7rem; font-weight: 700; color: #831843;">x86 / x86_64</div>
-                </div>
-              </div>
-            </div>
+          <div class="diagram-image-container">
+            <img src="static/images/diagram_apps_distribution.svg" alt="Compiled Applications and APK Binaries Across Hybrid Frameworks" loading="lazy">
           </div>
-
-          <!-- HTML comment for user/developer replacement -->
-          <!-- TODO: Replace the preview above with: <img src="static/images/diagram_build_variations.svg" alt="Build Variations and Architecture Breakdown"> -->
-
+          
           <div class="diagram-caption">
-            Figure: Breakdown of App Build Variations, Dead-Code Elimination &amp; Target Architectures
+            Figure: Distribution of Compiled Applications (N = 5,345) and Compiled Binaries (N = 37,739 APKs) Across Cross-Platform Frameworks
           </div>
           <div class="diagram-subcaption">
-            Comparative chart of compilation configurations (Debug vs. R8 code-shrunk Release vs. native obfuscation) and binary architectures, enabling researchers to evaluate tree-shaking robustness and dead-code resilience.
+            Distribution of compiled applications and APK binaries in X-TPL. React Native accounts for 3,968 compiled apps (19,303 APKs), .NET MAUI for 1,027 apps (15,410 APKs), Flutter for 248 apps (2,414 APKs), and Apache Cordova for 102 apps (612 APKs), curated from 57,993 crawled GitHub repositories (54,953 repositories tagged buildable).
+          </div>
+        </div>
+
+        <!-- DIAGRAM 2: Build Variations & Target Architectures -->
+        <div class="diagram-placeholder-card">
+          <div class="diagram-placeholder-header">
+            <span class="diagram-tag"><i class="fas fa-layer-group"></i> Build Configurations &amp; Target ABIs</span>
+            <span class="diagram-badge-ready">
+              <i class="fas fa-check-circle"></i> 37,739 Compiled Binaries (APKs) Across Configurations &amp; Target ABIs
+            </span>
+          </div>
+
+          <div class="diagram-image-container">
+            <img src="static/images/diagram_build_variations.svg" alt="APK Breakdown by Build Configuration and Target Architecture" loading="lazy">
+          </div>
+
+          <div class="diagram-caption">
+            Figure: Breakdown of 37,739 Compiled Binaries (APKs) by Build Configuration and Target ABI Distribution
+          </div>
+          <div class="diagram-subcaption">
+            X-TPL provides paired build configurations: 21,999 unoptimized Debug APKs (58.3%), 14,975 obfuscated Release APKs utilizing Android R8 code shrinking (39.7%), and 765 Flutter native-obfuscated Release APKs (2.0%). Across Target ABIs, the dataset comprises 9,759 Universal/Unsplit APKs (25.9%), 7,459 x86 APKs (19.8%), 7,213 arm64-v8a APKs (19.1%), 7,203 x86_64 APKs (19.1%), and 6,105 armeabi-v7a APKs (16.2%).
           </div>
         </div>
 
@@ -667,20 +906,20 @@
         <div class="has-text-centered" style="margin-bottom: 2.5rem;">
           <h2 class="title is-3">Automated Curation Pipeline</h2>
           <p class="subtitle" style="font-size: 1.05rem; color: var(--text-secondary);">
-            Reproducible, Docker-isolated compilation system extracting verified compile-time dependency ground truths.
+            Python-orchestrated, Docker-isolated compilation system divided into four phases: crawling, downloading, analysing, and building.
           </p>
         </div>
 
-        <!-- 4-Phase Process Description -->
+        <!-- 4-Phase Process Description matching Section III of Main.tex -->
         <div class="columns is-multiline">
           
           <div class="column is-6">
             <div style="padding: 1.25rem; background: var(--background-secondary); border-radius: var(--border-radius); border: 1px solid var(--border-color); height: 100%;">
               <h4 style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">
-                <span style="color: var(--primary-color);">1.</span> Crawling &amp; Filtering
+                <span style="color: var(--primary-color);">&#10102;</span> Crawler <small style="font-weight: 500; color: var(--text-light);">(Data Collection &amp; Filtering)</small>
               </h4>
               <p style="font-size: 0.95rem; color: var(--text-secondary);">
-                Uses the GitHub API via PyGithub to identify candidate repositories across Flutter, React Native, Cordova, and MAUI. Pre-filters repositories targeting latest releases or trunk commits based on build manifests.
+                Uses the GitHub API via the PyGithub library to identify repositories associated with Flutter, React Native, Apache Cordova, and .NET MAUI. Targets the latest release (or latest commit on the default branch), pre-filters based on essential framework files (<code>pubspec.yaml</code>, <code>package.json</code>), and tags repositories as <code>buildable</code> or <code>not buildable</code> in <code>repos.json</code>.
               </p>
             </div>
           </div>
@@ -688,10 +927,10 @@
           <div class="column is-6">
             <div style="padding: 1.25rem; background: var(--background-secondary); border-radius: var(--border-radius); border: 1px solid var(--border-color); height: 100%;">
               <h4 style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">
-                <span style="color: var(--primary-color);">2.</span> Repository Analysis
+                <span style="color: var(--primary-color);">&#10103;</span> Downloader <small style="font-weight: 500; color: var(--text-light);">(Data Collection &amp; Filtering)</small>
               </h4>
               <p style="font-size: 0.95rem; color: var(--text-secondary);">
-                Locates the topmost valid Android build directory and conservatively estimates baseline toolchain versions for Gradle, JDK, and framework runtimes. Excludes repositories with broken private dependencies.
+                Retrieves all repositories tagged as <code>buildable</code> using GitHub's ZIP API endpoint. To prevent directory collisions, each repository is extracted into an isolated folder named using its unique GitHub repository name.
               </p>
             </div>
           </div>
@@ -699,10 +938,10 @@
           <div class="column is-6">
             <div style="padding: 1.25rem; background: var(--background-secondary); border-radius: var(--border-radius); border: 1px solid var(--border-color); height: 100%;">
               <h4 style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">
-                <span style="color: var(--primary-color);">3.</span> Containerized Compilation
+                <span style="color: var(--primary-color);">&#10104;</span> Analyzer <small style="font-weight: 500; color: var(--text-light);">(Analysis &amp; Version Estimation)</small>
               </h4>
               <p style="font-size: 0.95rem; color: var(--text-secondary);">
-                Executes builds inside dynamically generated Docker containers. Automatically bumps toolchain versions on failure and builds paired configurations: Debug, Release (with R8), and native obfuscation.
+                Validates downloaded repositories via static analysis before any build is attempted, filtering out missing Android build definitions or private dependencies. Locates the topmost valid build directory (selecting alphabetically on ties) and conservatively estimates baseline versions for the framework, engine (Gradle), and JDK.
               </p>
             </div>
           </div>
@@ -710,58 +949,34 @@
           <div class="column is-6">
             <div style="padding: 1.25rem; background: var(--background-secondary); border-radius: var(--border-radius); border: 1px solid var(--border-color); height: 100%;">
               <h4 style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">
-                <span style="color: var(--primary-color);">4.</span> Ground-Truth Extraction
+                <span style="color: var(--primary-color);">&#10105;</span> Orchestrator <small style="font-weight: 500; color: var(--text-light);">(Containerized Compilation &amp; Extraction)</small>
               </h4>
               <p style="font-size: 0.95rem; color: var(--text-secondary);">
-                Extracts the final resolved lock files (<code>package-lock.json</code>, <code>yarn.lock</code>, <code>package_config.json</code>, <code>packages.lock.json</code>) alongside the architecture-specific APK binaries.
+                Executes builds inside dynamically generated Docker containers, automatically incrementing framework or JDK versions on mismatch. Compiles architecture-specific APKs in Debug, Release (utilizing R8), and Flutter native obfuscation configurations, and extracts the resulting <strong>Compiled Binaries (APKs)</strong> and <strong>Ground-Truth Artifacts</strong> (<code>package-lock.json</code>, <code>yarn.lock</code>, <code>package_config.json</code>, <code>packages.lock.json</code>, and direct <code>.jar</code>/<code>.aar</code> binaries).
               </p>
             </div>
           </div>
 
         </div>
 
-        <!-- DIAGRAM PLACEHOLDER 3: Pipeline Overview -->
+        <!-- DIAGRAM 3: Pipeline Overview -->
         <div class="diagram-placeholder-card" style="margin-top: 2rem;">
           <div class="diagram-placeholder-header">
-            <span class="diagram-tag"><i class="fas fa-sitemap"></i> Diagram Placeholder 3</span>
-            <span class="diagram-badge-pending">
-              <i class="fas fa-hourglass-half"></i> Placeholder: Curation Pipeline Architecture
+            <span class="diagram-tag"><i class="fas fa-sitemap"></i> Pipeline Architecture</span>
+            <span class="diagram-badge-ready">
+              <i class="fas fa-check-circle"></i> End-to-End Funnel (57,993 Repos &rarr; 5,345 Apps &rarr; 37,739 APKs &bull; 78,593 TPL-Version Pairs)
             </span>
           </div>
 
-          <!-- Mock Visual Pipeline Flow -->
-          <div class="diagram-mock-preview">
-            <div class="pipeline-flow">
-              <div class="pipeline-step">
-                <i class="fab fa-github"></i>
-                <span>1. GitHub Crawl</span>
-              </div>
-              <div class="pipeline-arrow"><i class="fas fa-arrow-right"></i></div>
-              <div class="pipeline-step">
-                <i class="fas fa-search-plus"></i>
-                <span>2. Static Analysis</span>
-              </div>
-              <div class="pipeline-arrow"><i class="fas fa-arrow-right"></i></div>
-              <div class="pipeline-step">
-                <i class="fab fa-docker"></i>
-                <span>3. Docker Builds</span>
-              </div>
-              <div class="pipeline-arrow"><i class="fas fa-arrow-right"></i></div>
-              <div class="pipeline-step">
-                <i class="fas fa-file-archive"></i>
-                <span>4. APK &amp; Lockfiles</span>
-              </div>
-            </div>
+          <div class="diagram-image-container">
+            <img src="static/images/diagram_pipeline_overview.svg" alt="Figure 1: Overview of the system to build the dataset" loading="lazy">
           </div>
-
-          <!-- HTML comment for user/developer replacement -->
-          <!-- TODO: Replace the preview above with: <img src="static/images/diagram_pipeline_overview.svg" alt="Overview of the system to build the dataset"> -->
 
           <div class="diagram-caption">
-            Figure 1: Overview of the Automated System for Building the X-TPL Dataset
+            Figure 1: Overview of the System to Build the Dataset
           </div>
           <div class="diagram-subcaption">
-            End-to-end architecture showing repository crawling, version estimation, isolated multi-stage containerized compilation, and dual-artifact extraction (compiled APKs &amp; resolved lockfiles).
+            Architecture of the automated X-TPL curation system across four phases: &#10102; Crawler (57,993 GitHub repositories, 54,953 tagged buildable in <code>repos.json</code>), &#10103; Downloader (GitHub ZIP API extraction), &#10104; Analyzer (static validation &amp; conservative version estimation), and &#10105; Orchestrator (Docker-isolated compilation yielding 37,739 Compiled Binaries across 5,345 apps and 78,593 unique TPL-version pairs).
           </div>
         </div>
 
@@ -900,8 +1115,8 @@
             <span class="copy-text">Copy</span>
           </button>
         </div>
-        <pre id="bibtex-code"><code>@inproceedings{FrederikXTPL,
-  author    = {Frederik, Jordi Tim and Sutter, Thomas and Kehrer, Timo},
+        <pre id="bibtex-code"><code>@inproceedings{JordiXTPL,
+  author    = {Jordi, Tim Frederik and Sutter, Thomas and Kehrer, Timo},
   title     = {X-TPL: A Ground-Truth Dataset of Cross-Platform Android Apps and their Third-Party Libraries},
   booktitle = {Proceedings of the Tool Demonstration and Data Showcase Track},
   url       = {https://x-tpl.github.io/},
