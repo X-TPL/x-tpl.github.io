@@ -864,7 +864,7 @@
           </div>
 
           <div class="diagram-image-container">
-            <img src="static/images/diagram_apps_distribution.svg" alt="Compiled Applications and APK Binaries Across Hybrid Frameworks" loading="lazy">
+            <img src="static/images/diagram_apps_distribution.svg" width="940" height="395" alt="Compiled Applications and APK Binaries Across Hybrid Frameworks">
           </div>
           
           <div class="diagram-caption">
@@ -885,7 +885,7 @@
           </div>
 
           <div class="diagram-image-container">
-            <img src="static/images/diagram_build_variations.svg" alt="APK Breakdown by Build Configuration and Target Architecture" loading="lazy">
+            <img src="static/images/diagram_build_variations.svg" width="940" height="430" alt="APK Breakdown by Build Configuration and Target Architecture">
           </div>
 
           <div class="diagram-caption">
@@ -969,7 +969,7 @@
           </div>
 
           <div class="diagram-image-container">
-            <img src="static/images/diagram_pipeline_overview.svg" alt="Figure 1: Overview of the system to build the dataset" loading="lazy">
+            <img src="static/images/diagram_pipeline_overview.svg" width="940" height="310" alt="Figure 1: Overview of the system to build the dataset">
           </div>
 
           <div class="diagram-caption">
@@ -1060,31 +1060,51 @@
         <div class="columns is-centered">
           <div class="column is-11">
             
-            <!-- File Tree Layout Preview matching exact user requested folders -->
+            <!-- File Tree Layout Preview matching exact Vault directory structure -->
             <div style="margin-top: 1rem; margin-bottom: 1.5rem;">
               <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.75rem;">
                 <i class="fas fa-sitemap" style="color: var(--primary-color);"></i> Directory Layout:
               </h4>
               <div class="dataset-tree-card">
-                <div><span class="tree-folder">x-tpl/</span> <span class="tree-comment"># Root dataset directory</span></div>
-                <div>├── <span class="tree-file">README.txt</span> <span class="tree-comment"># Dataset documentation</span></div>
-                <div>├── <span class="tree-file">metadata.json</span> <span class="tree-comment"># Root-level metadata: commit hashes, toolchain versions, build outcomes</span></div>
-                <div>├── <span class="tree-folder">ReactNative/</span> <span class="tree-comment"># React Native APKs &amp; lock files (package-lock.json, yarn.lock)</span></div>
-                <div>│&nbsp;&nbsp; └── <span class="tree-folder">&lt;project_name&gt;/</span> <span class="tree-comment"># App project folder</span></div>
-                <div>│&nbsp;&nbsp;     ├── <span class="tree-file">app-debug.apk</span> <span class="tree-comment"># Compiled APK binary</span></div>
-                <div>│&nbsp;&nbsp;     ├── <span class="tree-file">app-release.apk</span> <span class="tree-comment"># Release APK binary</span></div>
-                <div>├── <span class="tree-folder">Flutter/</span> <span class="tree-comment"># Flutter APKs &amp; lock files (package_config.json, pubspec.lock)</span></div>
-                <div>│&nbsp;&nbsp; └── <span class="tree-folder">&lt;project_name&gt;/</span> <span class="tree-comment"># App project folder</span></div>
-                <div>│&nbsp;&nbsp;     ├── <span class="tree-file">app-debug.apk</span></div>
-                <div>│&nbsp;&nbsp;     ├── <span class="tree-file">app-release.apk</span></div>
-                <div>├── <span class="tree-folder">Cordova/</span> <span class="tree-comment"># Apache Cordova APKs &amp; plugin lock files (plugins.json)</span></div>
-                <div>│&nbsp;&nbsp; └── <span class="tree-folder">&lt;project_name&gt;/</span> <span class="tree-comment"># App project folder</span></div>
-                <div>│&nbsp;&nbsp;     ├── <span class="tree-file">app-debug.apk</span></div>
-                <div>│&nbsp;&nbsp;     ├── <span class="tree-file">app-release.apk</span></div>
-                <div>└── <span class="tree-folder">Maui/</span> <span class="tree-comment"># .NET MAUI APKs &amp; NuGet lock files (packages.lock.json)</span></div>
-                <div>&nbsp;&nbsp;&nbsp; └── <span class="tree-folder">&lt;project_name&gt;/</span> <span class="tree-comment"># App project folder</span></div>
-                <div>&nbsp;&nbsp;&nbsp;     ├── <span class="tree-file">app-debug.apk</span></div>
-                <div>&nbsp;&nbsp;&nbsp;     ├── <span class="tree-file">app-release.apk</span></div>
+                <div><span class="tree-folder">x-tpl/</span> <span class="tree-comment"># Root Vault directory (https://vault.cloudlab.zhaw.ch/vault-data/x-tpl)</span></div>
+                <div>├── <span class="tree-folder">Cordova/</span> <span class="tree-comment"># Apache Cordova (102 project folders, 612 APKs)</span></div>
+                <div>│&nbsp;&nbsp; ├── <span class="tree-file">builds.csv</span>, <span class="tree-file">build.log</span> <span class="tree-comment"># Framework-level build summary &amp; orchestrator log</span></div>
+                <div>│&nbsp;&nbsp; └── <span class="tree-folder">&lt;project_name&gt;/</span></div>
+                <div>│&nbsp;&nbsp;     ├── <span class="tree-file">app-&lt;abi&gt;-debug.apk</span> <span class="tree-comment"># Debug APK binaries (arm64-v8a, armeabi-v7a, x86, x86_64)</span></div>
+                <div>│&nbsp;&nbsp;     ├── <span class="tree-file">package.json</span>, <span class="tree-file">package-lock.json</span>, <span class="tree-file">fetch.json</span>, <span class="tree-file">android.json</span>, <span class="tree-file">config.xml</span></div>
+                <div>│&nbsp;&nbsp;     ├── <span class="tree-file">*.gradle</span>, <span class="tree-file">build.log</span> <span class="tree-comment"># Build manifests &amp; container compilation log</span></div>
+                <div>│&nbsp;&nbsp;     ├── <span class="tree-folder">libs/</span> <span class="tree-comment"># Directly included .jar / .aar binaries</span></div>
+                <div>│&nbsp;&nbsp;     ├── <span class="tree-folder">plugin_manifests/</span> <span class="tree-comment"># Extracted Cordova plugin XML manifests</span></div>
+                <div>│&nbsp;&nbsp;     └── <span class="tree-folder">r8/</span> <span class="tree-comment"># Release (R8) builds: app-&lt;abi&gt;-release.apk &amp; lock files</span></div>
+                <div>├── <span class="tree-folder">Flutter/</span> <span class="tree-comment"># Flutter (248 project folders, 2,414 APKs)</span></div>
+                <div>│&nbsp;&nbsp; ├── <span class="tree-file">builds.csv</span>, <span class="tree-file">build.log</span></div>
+                <div>│&nbsp;&nbsp; └── <span class="tree-folder">&lt;project_name&gt;/</span></div>
+                <div>│&nbsp;&nbsp;     ├── <span class="tree-file">app-&lt;abi&gt;-debug.apk</span>, <span class="tree-file">app.apk</span> <span class="tree-comment"># Debug split-ABI &amp; universal APKs</span></div>
+                <div>│&nbsp;&nbsp;     ├── <span class="tree-file">pubspec.yaml</span>, <span class="tree-file">pubspec.lock</span>, <span class="tree-file">package_config.json</span></div>
+                <div>│&nbsp;&nbsp;     ├── <span class="tree-file">build.gradle</span>, <span class="tree-file">settings.gradle</span>, <span class="tree-file">build.log</span></div>
+                <div>│&nbsp;&nbsp;     ├── <span class="tree-folder">libs/</span> <span class="tree-comment"># Directly included native binaries</span></div>
+                <div>│&nbsp;&nbsp;     ├── <span class="tree-folder">r8/</span> <span class="tree-comment"># Release (R8) builds: app-&lt;abi&gt;-release.apk, app.apk &amp; lock files</span></div>
+                <div>│&nbsp;&nbsp;     └── <span class="tree-folder">obfuscated/</span> <span class="tree-comment"># Native obfuscated builds: app-&lt;abi&gt;-release.apk &amp; .symbols</span></div>
+                <div>├── <span class="tree-folder">Maui/</span> <span class="tree-comment"># .NET MAUI (1,027 project folders, 15,410 APKs)</span></div>
+                <div>│&nbsp;&nbsp; ├── <span class="tree-file">builds.csv</span>, <span class="tree-file">build.log</span></div>
+                <div>│&nbsp;&nbsp; └── <span class="tree-folder">&lt;project_name&gt;/</span></div>
+                <div>│&nbsp;&nbsp;     ├── <span class="tree-file">&lt;app_id&gt;-&lt;abi&gt;.apk</span>, <span class="tree-file">&lt;app_id&gt;-&lt;abi&gt;-Signed.apk</span> <span class="tree-comment"># Debug APKs (unsigned &amp; signed)</span></div>
+                <div>│&nbsp;&nbsp;     ├── <span class="tree-file">&lt;project&gt;.csproj</span>, <span class="tree-file">packages.lock.json</span>, <span class="tree-file">build.log</span> <span class="tree-comment"># NuGet ground-truth lock file</span></div>
+                <div>│&nbsp;&nbsp;     ├── <span class="tree-folder">libs/</span></div>
+                <div>│&nbsp;&nbsp;     └── <span class="tree-folder">r8/</span> <span class="tree-comment"># Release (R8) builds: &lt;app_id&gt;-android-&lt;abi&gt;.apk &amp; packages.lock.json</span></div>
+                <div>├── <span class="tree-folder">Metadata/</span> <span class="tree-comment"># Crawler repository metadata &amp; batch compilation logs</span></div>
+                <div>│&nbsp;&nbsp; ├── <span class="tree-file">cordova_builds.csv</span>, <span class="tree-file">flutter_builds.csv</span>, <span class="tree-file">maui_builds.csv</span>, <span class="tree-file">rn_1..10_builds.csv</span></div>
+                <div>│&nbsp;&nbsp; ├── <span class="tree-file">cordova_build.log</span>, <span class="tree-file">flutter_build.log</span>, <span class="tree-file">maui_build.log</span>, <span class="tree-file">rn_1..10_build.log</span></div>
+                <div>│&nbsp;&nbsp; ├── <span class="tree-folder">Cordova/</span><span class="tree-file">repos.json</span>, <span class="tree-folder">Flutter/</span><span class="tree-file">repos.json</span>, <span class="tree-folder">Maui/</span><span class="tree-file">repos.json</span></div>
+                <div>│&nbsp;&nbsp; └── <span class="tree-folder">ReactNative/</span><span class="tree-file">repos_js.json</span>, <span class="tree-file">repos_ts.json</span></div>
+                <div>└── <span class="tree-folder">ReactNative/</span> <span class="tree-comment"># React Native (4,035 project folders; 3,968 compiled apps, 19,303 APKs)</span></div>
+                <div>&nbsp;&nbsp;&nbsp; ├── <span class="tree-file">builds.csv</span>, <span class="tree-file">build.log</span></div>
+                <div>&nbsp;&nbsp;&nbsp; └── <span class="tree-folder">&lt;project_name&gt;/</span></div>
+                <div>&nbsp;&nbsp;&nbsp;     ├── <span class="tree-file">app-&lt;abi&gt;-debug.apk</span> <span class="tree-comment"># Debug APK binaries</span></div>
+                <div>&nbsp;&nbsp;&nbsp;     ├── <span class="tree-file">package.json</span>, <span class="tree-file">package-lock.json</span> <span class="tree-comment"># (or yarn.lock / pnpm-lock.yaml)</span></div>
+                <div>&nbsp;&nbsp;&nbsp;     ├── <span class="tree-file">*.gradle</span>, <span class="tree-file">build.log</span></div>
+                <div>&nbsp;&nbsp;&nbsp;     ├── <span class="tree-folder">libs/</span> <span class="tree-comment"># Directly included .jar / .aar / .so binaries</span></div>
+                <div>&nbsp;&nbsp;&nbsp;     └── <span class="tree-folder">r8/</span> <span class="tree-comment"># Release (R8) builds: app-&lt;abi&gt;-release.apk &amp; lock files</span></div>
               </div>
             </div>
 
